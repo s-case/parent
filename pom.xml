@@ -220,4 +220,15 @@
         </plugins>
     </build>
 
+    <scm>
+        <connection>scm:git@github.com:s-case/parent.git</connection>
+        <developerConnection>scm:git@github.com:s-case/parent.git</developerConnection>
+        <url>http://scase-openshift.ats.de/</url>
+    </scm>
+
+    <modules>
+        <module>scase-build</module>
+        <module>scase-base</module>
+    </modules>
+
 </project>
