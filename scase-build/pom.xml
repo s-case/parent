@@ -5,10 +5,11 @@
 
     <artifactId>scase-build</artifactId>
     <name>SCASE - Build</name>
-        <description>Build meta data (findbugs and checkstyle configuration</description>
+    <description>Build meta data (findbugs and checkstyle configuration</description>
+
     <parent>
         <groupId>eu.scasefp7</groupId>
-        <artifactId>scase</artifactId>
+        <artifactId>scase-parent</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
