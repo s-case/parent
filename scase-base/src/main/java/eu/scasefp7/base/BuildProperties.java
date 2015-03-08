@@ -1,4 +1,4 @@
-package eu.fp7.scase.base;
+package eu.scasefp7.base;
 
 import java.io.IOException;
 import java.util.Properties;

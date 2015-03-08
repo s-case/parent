@@ -1,4 +1,4 @@
-package eu.fp7.scase.base;
+package eu.scasefp7.base;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 

@@ -1,4 +1,4 @@
-package eu.fp7.scase.base;
+package eu.scasefp7.base;
 
 public class ScaseException extends RuntimeException {
 
