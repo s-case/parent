@@ -261,8 +261,8 @@
 	</build>
 
 	<scm>
-		<connection>scm:https://github.com:s-case/parent.git</connection>
-		<developerConnection>scm:https://github.com:s-case/parent.git</developerConnection>
+		<connection>scm:git:https://github.com:s-case/parent.git</connection>
+		<developerConnection>scm:git:https://github.com:s-case/parent.git</developerConnection>
 		<url>http://scase-openshift.ats.de/</url>
 	</scm>
 
