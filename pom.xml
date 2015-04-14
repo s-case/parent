@@ -7,6 +7,16 @@
 	<packaging>pom</packaging>
 	<name>SCASE - Parent</name>
 	<description>S-CASE parent module to manage dependencies and plugins</description>
+        <url>http://www.scasefp7.eu/</url>
+
+        <developers>
+            <developer>
+                  <name>Robert Magnus</name>
+                  <email>robert.magnus@akquinet.de</email>
+                  <organization>akquinet tech@spree</organization>
+                  <organizationUrl>http://www.akquinet.de/</organizationUrl>
+              </developer>
+        </developers>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
