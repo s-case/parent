@@ -5,15 +5,19 @@ public class ScaseException extends RuntimeException {
     private static final long serialVersionUID = 5046401925166235497L;
 
     private String fieldName;
-    
+
     protected ScaseException() {}
-    
+
     public ScaseException( String message ) {
         super( message );
     }
 
     public ScaseException(Throwable throwable){
-        super(throwable.getMessage());
+        super(throwable);
+    }
+
+    public ScaseException(String message, Throwable throwable){
+        super(message, throwable);
     }
 
     public ScaseException( String message, String fieldName ) {
@@ -22,9 +26,9 @@ public class ScaseException extends RuntimeException {
     }
 
     public String getFieldName() {
-        return fieldName;
+        return this.fieldName;
     }
-    
+
     public void setFieldName(String fieldName) {
         this.fieldName = fieldName;
     }
