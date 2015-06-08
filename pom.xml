@@ -1,244 +1,299 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>eu.scasefp7</groupId>
-	<artifactId>scase-parent</artifactId>
-	<version>1.0.2-SNAPSHOT</version>
-	<packaging>pom</packaging>
-	<name>SCASE - Parent</name>
-	<description>S-CASE parent module to manage dependencies and plugins</description>
-        <url>http://www.scasefp7.eu/</url>
+    <groupId>eu.scasefp7</groupId>
+    <artifactId>scase-parent</artifactId>
+    <version>1.0.2-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-        <developers>
-            <developer>
-                  <name>Robert Magnus</name>
-                  <email>robert.magnus@akquinet.de</email>
-                  <organization>akquinet tech@spree</organization>
-                  <organizationUrl>http://www.akquinet.de/</organizationUrl>
-              </developer>
-        </developers>
+    <name>SCASE - Parent</name>
+    <description>S-CASE parent module to manage dependencies and plugins</description>
+    <url>http://www.scasefp7.eu/</url>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-                <jacoco.version>0.7.2.201409121644</jacoco.version>
-	</properties>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
 
-	<prerequisites>
-		<maven>3.0.5</maven>
-	</prerequisites>
+    <developers>
+        <developer>
+            <name>Robert Magnus</name>
+            <email>robert.magnus@akquinet.de</email>
+            <organization>akquinet tech@spree</organization>
+            <organizationUrl>http://www.akquinet.de</organizationUrl>
+        </developer>
+    </developers>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>ch.qos.logback</groupId>
-				<artifactId>logback-classic</artifactId>
-				<version>1.1.2</version>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-				<version>1.7.7</version>
-			</dependency>
-			<dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-				<version>4.11</version>
-			</dependency>
-			<dependency>
-				<groupId>org.easytesting</groupId>
-				<artifactId>fest-assert-core</artifactId>
-				<version>2.0M10</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+    <scm>
+        <connection>scm:git:git@github.com:s-case/parent.git</connection>
+        <developerConnection>scm:git:git@github.com:s-case/parent.git</developerConnection>
+        <url>https://github.com/s-case/parent.git</url>
+        <tag>HEAD</tag>
+    </scm>
 
-	<distributionManagement>
-		<snapshotRepository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-		<repository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-		</repository>
-	</distributionManagement>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jacoco.version>0.7.2.201409121644</jacoco.version>
+    </properties>
 
-	<build>
-		<resources>
-			<resource>
-				<filtering>true</filtering>
-				<directory>src/main/resources</directory>
-			</resource>
-		</resources>
-		<pluginManagement>
-			<plugins>
+    <prerequisites>
+        <maven>3.0.5</maven>
+    </prerequisites>
 
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-source-plugin</artifactId>
-					<version>2.4</version>
-					<executions>
-						<execution>
-							<id>attach-sources</id>
-							<goals>
-								<goal>jar-no-fork</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>1.1.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>1.7.7</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.11</version>
+            </dependency>
+            <dependency>
+                <groupId>org.easytesting</groupId>
+                <artifactId>fest-assert-core</artifactId>
+                <version>2.0M10</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-javadoc-plugin</artifactId>
-					<version>2.10.1</version>
-					<executions>
-						<execution>
-							<id>attach-javadocs</id>
-							<goals>
-								<goal>jar</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
+    <!-- Alternatively (to nexus-staging-maven-plugin) if you are using the Maven deploy plugin, which is the default behavior,
+    you need to add a full distributionManagement section. -->
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-gpg-plugin</artifactId>
-					<version>1.5</version>
-					<executions>
-						<execution>
-							<id>sign-artifacts</id>
-							<phase>verify</phase>
-							<goals>
-								<goal>sign</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
 
-				<plugin>
-					<groupId>org.sonatype.plugins</groupId>
-					<artifactId>nexus-staging-maven-plugin</artifactId>
-					<version>1.6.5</version>
-					<extensions>true</extensions>
-					<configuration>
-						<serverId>ossrh</serverId>
-						<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-						<autoReleaseAfterClose>true</autoReleaseAfterClose>
-					</configuration>
-				</plugin>
+    <build>
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
 
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>findbugs-maven-plugin</artifactId>
-					<version>3.0.0</version>
-					<dependencies>
-						<dependency>
-							<groupId>eu.scasefp7</groupId>
-							<artifactId>scase-build</artifactId>
-							<version>1.0.2-SNAPSHOT</version>
-						</dependency>
-					</dependencies>
-					<configuration>
-						<effort>Default</effort>
-						<threshold>Normal</threshold>
-						<excludeFilterFile>findbugs/exclude.xml</excludeFilterFile>
-						<xmlOutput>true</xmlOutput>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.1</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-deploy-plugin</artifactId>
-					<version>2.8.1</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-checkstyle-plugin</artifactId>
-					<version>2.13</version>
-					<dependencies>
-						<dependency>
-							<groupId>eu.scasefp7</groupId>
-							<artifactId>scase-build</artifactId>
-							<version>1.0.2-SNAPSHOT</version>
-						</dependency>
-					</dependencies>
-					<configuration>
-						<configLocation>checkstyle/checkstyle.xml</configLocation>
-						<propertiesLocation>checkstyle_maven.properties</propertiesLocation>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-jar-plugin</artifactId>
-					<version>2.4</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-release-plugin</artifactId>
-					<version>2.5</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-war-plugin</artifactId>
-					<version>2.1.1</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-scm-plugin</artifactId>
-					<version>1.9</version>
-				</plugin>
-				<plugin>
-					<groupId>nl.fizzit.maven.plugins</groupId>
-					<artifactId>maven-tstamp-plugin</artifactId>
-					<version>1.0</version>
-				</plugin>
-				<plugin>
-					<groupId>org.jvnet.jaxb2.maven2</groupId>
-					<artifactId>maven-jaxb2-plugin</artifactId>
-					<version>0.8.3</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.17</version>
-					<configuration>
-						<runOrder>random</runOrder>
-                                                <argLine>${argLine}</argLine>
-						<trimStackTrace>false</trimStackTrace>
-					</configuration>
-				</plugin>
+        <pluginManagement>
+            <plugins>
 
-                                <plugin>
-                                    <groupId>org.jacoco</groupId>
-                                    <artifactId>jacoco-maven-plugin</artifactId>
-                                    <version>${jacoco.version}</version>
-                                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.4</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>2.10.3</version>
+                    <executions>
+                        <execution>
+                            <id>attach-javadocs</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>1.6</version>
+                    <executions>
+                        <execution>
+                            <id>sign-artifacts</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>sign</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                    <version>1.6.5</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <serverId>ossrh</serverId>
+                        <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                        <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                    </configuration>
+                </plugin>
 
-			</plugins>
-		</pluginManagement>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
-					<encoding>UTF-8</encoding>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<configuration>
-					<autoVersionSubmodules>true</autoVersionSubmodules>
-					<releaseProfiles>release</releaseProfiles>
-				</configuration>
-			</plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>findbugs-maven-plugin</artifactId>
+                    <version>3.0.0</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>eu.scasefp7</groupId>
+                            <artifactId>scase-build</artifactId>
+                            <version>1.0.2-SNAPSHOT</version>
+                        </dependency>
+                    </dependencies>
+                    <configuration>
+                        <effort>Default</effort>
+                        <threshold>Normal</threshold>
+                        <excludeFilterFile>findbugs/exclude.xml</excludeFilterFile>
+                        <xmlOutput>true</xmlOutput>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.8.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <version>2.13</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>eu.scasefp7</groupId>
+                            <artifactId>scase-build</artifactId>
+                            <version>1.0.2-SNAPSHOT</version>
+                        </dependency>
+                    </dependencies>
+                    <configuration>
+                        <configLocation>checkstyle/checkstyle.xml</configLocation>
+                        <propertiesLocation>checkstyle_maven.properties</propertiesLocation>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>2.4</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.5</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>2.1.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-scm-plugin</artifactId>
+                    <version>1.9</version>
+                </plugin>
+                <plugin>
+                    <groupId>nl.fizzit.maven.plugins</groupId>
+                    <artifactId>maven-tstamp-plugin</artifactId>
+                    <version>1.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.jvnet.jaxb2.maven2</groupId>
+                    <artifactId>maven-jaxb2-plugin</artifactId>
+                    <version>0.8.3</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.17</version>
+                    <configuration>
+                        <runOrder>random</runOrder>
+                        <argLine>${argLine}</argLine>
+                        <trimStackTrace>false</trimStackTrace>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${jacoco.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+
+        <plugins>
+
+            <!-- To get Javadoc and Source jar files generated, you have to configure the javadoc and source Maven plugins. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
+
+            <!-- The Maven GPG plugin is used to sign the components -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+            </plugin>
+
+            <!-- Nexus Staging Maven Plugin for Deployment and Release
+            ...configure Maven to deploy to the OSSRH Nexus server with the Nexus Staging Maven plugin -->
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <!--
+                    With the property autoReleaseAfterClose set to false you can manually inspect the staging repository in Nexus
+                    and trigger a release of the staging repository later with mvn nexus-staging:release
+                    -->
+                    <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <releaseProfiles>release</releaseProfiles>
+                </configuration>
+            </plugin>
 
             <plugin>
                 <groupId>org.jacoco</groupId>
@@ -251,7 +306,6 @@
                             <goal>prepare-agent</goal>
                         </goals>
                     </execution>
-
                     <execution>
                         <id>pre-integration-test</id>
                         <phase>pre-integration-test</phase>
@@ -262,23 +316,15 @@
                             <destFile>${project.basedir}/../target/jacoco-it.exec</destFile>
                         </configuration>
                     </execution>
-
                 </executions>
             </plugin>
 
-		</plugins>
-	</build>
+        </plugins>
+    </build>
 
-	<scm>
-		<connection>scm:git:git@github.com:s-case/parent.git</connection>
-		<developerConnection>scm:git:git@github.com:s-case/parent.git</developerConnection>
-		<url>https://github.com/s-case/parent.git</url>
-	  <tag>HEAD</tag>
-  </scm>
-
-	<modules>
-		<module>scase-build</module>
-		<module>scase-base</module>
-	</modules>
+    <modules>
+        <module>scase-build</module>
+        <module>scase-base</module>
+    </modules>
 
 </project>
