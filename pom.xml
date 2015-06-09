@@ -30,7 +30,6 @@
         <connection>scm:git:git@github.com:s-case/parent.git</connection>
         <developerConnection>scm:git:git@github.com:s-case/parent.git</developerConnection>
         <url>https://github.com/s-case/parent.git</url>
-        <tag>scase-parent-1.0.2</tag>
     </scm>
 
     <properties>
