@@ -3,7 +3,7 @@
 
     <groupId>eu.scasefp7</groupId>
     <artifactId>scase-parent</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>SCASE - Parent</name>
@@ -137,11 +137,6 @@
                     <artifactId>nexus-staging-maven-plugin</artifactId>
                     <version>1.6.5</version>
                     <extensions>true</extensions>
-                    <configuration>
-                        <serverId>ossrh</serverId>
-                        <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                        <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                    </configuration>
                 </plugin>
 
                 <plugin>
@@ -269,7 +264,7 @@
                     With the property autoReleaseAfterClose set to false you can manually inspect the staging repository in Nexus
                     and trigger a release of the staging repository later with mvn nexus-staging:release
                     -->
-                    <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>
 
@@ -290,7 +285,9 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <configuration>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <useReleaseProfile>false</useReleaseProfile>
                     <releaseProfiles>release</releaseProfiles>
+                    <goals>deploy</goals>
                 </configuration>
             </plugin>
 
