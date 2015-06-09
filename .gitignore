@@ -4,3 +4,5 @@
 .*.swp
 target
 scase-base/scase.out
+*.iml
+.idea
