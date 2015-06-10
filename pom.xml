@@ -1,10 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>eu.scasefp7</groupId>
     <artifactId>scase-parent</artifactId>
-    <version>1.0.9-SNAPSHOT</version>
+    <version>1.0.9</version>
     <packaging>pom</packaging>
 
     <name>SCASE - Parent</name>
@@ -31,7 +30,7 @@
         <connection>scm:git:git@github.com:s-case/parent.git</connection>
         <developerConnection>scm:git:git@github.com:s-case/parent.git</developerConnection>
         <url>https://github.com/s-case/parent.git</url>
-        <tag>HEAD</tag>
+        <tag>scase-parent-1.0.9</tag>
     </scm>
 
     <properties>
