@@ -46,6 +46,7 @@
 					</execution>
 				</executions>
 			</plugin>
+
 			<plugin>
 				<groupId>nl.fizzit.maven.plugins</groupId>
 				<artifactId>maven-tstamp-plugin</artifactId>
@@ -68,5 +69,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
