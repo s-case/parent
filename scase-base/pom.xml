@@ -12,6 +12,19 @@
 		<version>1.0.9-SNAPSHOT</version>
 	</parent>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>nl.fizzit.maven.plugins</groupId>
+                <artifactId>maven-tstamp-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
 	<dependencies>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
@@ -32,41 +45,4 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>test-jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-			<plugin>
-				<groupId>nl.fizzit.maven.plugins</groupId>
-				<artifactId>maven-tstamp-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>export</goal>
-						</goals>
-						<configuration>
-							<formats>
-								<format>
-									<property>build.timestamp</property>
-									<pattern>HH:mm dd.MM.yyyy</pattern>
-									<timezone>MET</timezone>
-								</format>
-							</formats>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
 </project>
