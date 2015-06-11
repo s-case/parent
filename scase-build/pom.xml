@@ -4,7 +4,7 @@
 
 	<artifactId>scase-build</artifactId>
 	<name>SCASE - Build</name>
-	<description>Build meta data (findbugs and checkstyle configuration</description>
+	<description>Build meta data (findbugs and checkstyle configuration)</description>
 
 	<parent>
 		<groupId>eu.scasefp7</groupId>
@@ -16,4 +16,5 @@
 		<checkstyle.skip>true</checkstyle.skip>
 		<findbugs.skip>true</findbugs.skip>
 	</properties>
+
 </project>

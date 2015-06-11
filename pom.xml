@@ -21,15 +21,10 @@
         <developer>
             <name>Robert Magnus</name>
             <email>robert.magnus@akquinet.de</email>
-            <organization>akquinet tech@spree</organization>
+            <organization>akquinet tech@spree GmbH</organization>
             <organizationUrl>http://www.akquinet.de</organizationUrl>
         </developer>
     </developers>
-
-    <modules>
-        <module>scase-build</module>
-        <module>scase-base</module>
-    </modules>
 
     <scm>
         <connection>scm:git:git@github.com:s-case/parent.git</connection>
@@ -37,6 +32,11 @@
         <url>https://github.com/s-case/parent.git</url>
         <tag>HEAD</tag>
     </scm>
+
+    <modules>
+        <module>scase-build</module>
+        <module>scase-base</module>
+    </modules>
 
     <prerequisites>
         <maven>3.0.5</maven>
@@ -73,47 +73,6 @@
         </profile>
     </profiles>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>ch.qos.logback</groupId>
-                <artifactId>logback-classic</artifactId>
-                <version>1.1.2</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>1.7.7</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-simple</artifactId>
-                <version>1.7.7</version>
-            </dependency>
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>4.11</version>
-            </dependency>
-            <dependency>
-                <groupId>org.easytesting</groupId>
-                <artifactId>fest-assert-core</artifactId>
-                <version>2.0M10</version>
-            </dependency>
-
-            <dependency>
-                <groupId>eu.scasefp7</groupId>
-                <artifactId>scase-base</artifactId>
-                <version>1.0.16-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>eu.scasefp7</groupId>
-                <artifactId>scase-build</artifactId>
-                <version>1.0.16-SNAPSHOT</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <!-- Alternatively (to nexus-staging-maven-plugin) if you are using the Maven deploy plugin, which is the default behavior,
     you need to add a full distributionManagement section. -->
     <distributionManagement>
@@ -137,7 +96,7 @@
 
         <pluginManagement>
             <plugins>
-                <!-- To get Javadoc and Source jar files generated, you have to configure the javadoc and source Maven plugins. -->
+                <!-- To get Javadoc and Source jar files generated, configure the javadoc and source Maven plugins. -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
@@ -151,6 +110,7 @@
                         </execution>
                     </executions>
                 </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
@@ -164,7 +124,8 @@
                         </execution>
                     </executions>
                 </plugin>
-                <!-- The Maven GPG plugin is used to sign the components -->
+
+                <!-- The Maven GPG plugin is used to sign the components. -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
@@ -179,21 +140,20 @@
                         </execution>
                     </executions>
                 </plugin>
-                <!--Nexus Staging Maven Plugin for Deployment and Release - configure Maven to deploy to the OSSRH Nexus server-->
+
+                <!-- Nexus Staging Maven Plugin for Deployment and Release - configure Maven to deploy to the OSSRH Nexus server. -->
                 <plugin>
                     <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <!--<version>1.6.5</version>-->
                     <version>1.6.5-atlassian-2</version>
                     <extensions>true</extensions>
                     <configuration>
                         <serverId>ossrh</serverId>
                         <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                        <!-- With the property autoReleaseAfterClose set to false you can manually inspect the staging repository in Nexus
-                        and trigger a release of the staging repository later with mvn nexus-staging:release -->
                         <autoReleaseAfterClose>true</autoReleaseAfterClose>
                     </configuration>
                 </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
@@ -204,6 +164,7 @@
                         <encoding>UTF-8</encoding>
                     </configuration>
                 </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
@@ -220,6 +181,7 @@
                         <propertiesLocation>checkstyle_maven.properties</propertiesLocation>
                     </configuration>
                 </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
@@ -232,21 +194,25 @@
                         </execution>
                     </executions>
                 </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-war-plugin</artifactId>
                     <version>2.6</version>
                 </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-ear-plugin</artifactId>
                     <version>2.10</version>
                 </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
                     <version>2.8.2</version>
                 </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
@@ -258,11 +224,13 @@
                         <goals>deploy</goals>
                     </configuration>
                 </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-scm-plugin</artifactId>
                     <version>1.9.4</version>
                 </plugin>
+
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>findbugs-maven-plugin</artifactId>
@@ -281,6 +249,7 @@
                         <xmlOutput>true</xmlOutput>
                     </configuration>
                 </plugin>
+
                 <plugin>
                     <groupId>nl.fizzit.maven.plugins</groupId>
                     <artifactId>maven-tstamp-plugin</artifactId>
@@ -302,11 +271,13 @@
                         </execution>
                     </executions>
                 </plugin>
+
                 <plugin>
                     <groupId>org.jvnet.jaxb2.maven2</groupId>
                     <artifactId>maven-jaxb2-plugin</artifactId>
                     <version>0.12.3</version>
                 </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
@@ -317,10 +288,10 @@
                         <trimStackTrace>false</trimStackTrace>
                     </configuration>
                 </plugin>
+
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
-                    <!--<version>0.7.2.201409121644</version>-->
                     <version>0.7.5.201505241946</version>
                     <executions>
                         <execution>
@@ -363,4 +334,15 @@
             </plugin>
         </plugins>
     </build>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>eu.scasefp7</groupId>
+                <artifactId>scase-base</artifactId>
+                <version>1.0.16-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
 </project>
