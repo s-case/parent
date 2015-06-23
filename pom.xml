@@ -98,13 +98,6 @@
   </pluginRepositories>
 
     <build>
-        <resources>
-            <resource>
-                <filtering>true</filtering>
-                <directory>src/main/resources</directory>
-            </resource>
-        </resources>
-
         <pluginManagement>
             <plugins>
                 <!-- To get Javadoc and Source jar files generated, configure the javadoc and source Maven plugins. -->
