@@ -95,7 +95,7 @@
         <module name="BooleanExpressionComplexity"/>
         <module name="JavaNCSS"/>
         <module name="TrailingComment">
-            <property name="legalComment" value="Force_line_break"/>
+            <property name="legalComment" value="(\$NON-NLS-|Force_line_break)" />
         </module>
     </module>
     <module name="SeverityMatchFilter">
