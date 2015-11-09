@@ -3,7 +3,7 @@
 
     <groupId>eu.scasefp7</groupId>
     <artifactId>scase-parent</artifactId>
-    <version>1.0.24-SNAPSHOT</version>
+    <version>1.0.24</version>
     <packaging>pom</packaging>
 
     <name>SCASE - Parent</name>
@@ -30,7 +30,7 @@
         <connection>scm:git:git@github.com:s-case/parent.git</connection>
         <developerConnection>scm:git:git@github.com:s-case/parent.git</developerConnection>
         <url>https://github.com/s-case/parent.git</url>
-        <tag>HEAD</tag>
+        <tag>scase-parent-1.0.24</tag>
     </scm>
 
     <modules>
@@ -190,7 +190,7 @@
                         <dependency>
                             <groupId>eu.scasefp7</groupId>
                             <artifactId>scase-build</artifactId>
-                            <version>1.0.24-SNAPSHOT</version>
+                            <version>1.0.24</version>
                         </dependency>
                     </dependencies>
                     <configuration>
@@ -256,7 +256,7 @@
                         <dependency>
                             <groupId>eu.scasefp7</groupId>
                             <artifactId>scase-build</artifactId>
-                            <version>1.0.24-SNAPSHOT</version>
+                            <version>1.0.24</version>
                         </dependency>
                     </dependencies>
                     <configuration>
@@ -383,7 +383,7 @@
             <dependency>
                 <groupId>eu.scasefp7</groupId>
                 <artifactId>scase-base</artifactId>
-                <version>1.0.24-SNAPSHOT</version>
+                <version>1.0.24</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
